@@ -1,0 +1,24 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class gameover : MonoBehaviour {
+
+	public Vector2 startpos;
+	public GameObject button;
+
+	void Update()
+	{
+		if (Input.GetMouseButton (0)) {
+			button.transform.position = startpos;
+		}
+	}
+
+	public bool ggam;
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.tag == "Gameover") {
+			Application.LoadLevel (3);
+		}
+	}
+}
+
